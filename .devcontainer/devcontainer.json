@@ -1,0 +1,14 @@
+{
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"settings": {
+		"terminal.integrated.defaultProfile.linux": "zsh"
+	},
+	"postCreateCommand": "poetry install --no-ansi -n",
+	"extensions": [
+		"ms-python.python"
+	],
+	"remoteUser": "sebas"
+}
