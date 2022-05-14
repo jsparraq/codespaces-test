@@ -80,13 +80,13 @@ RUN sed -i 's/ZSH_HIGHLIGHT_HIGHLIGHTERS/#ZSH_HIGHLIGHT_HIGHLIGHTERS/g' $USER_HO
 
 RUN sed -i 's/ZSH_THEME=/#ZSH_THEME=/g' $USER_HOME/.zshrc
 
-RUN echo "source $ZSH/oh-my-zsh.sh" >> $USER_HOME/.zshrc
-
 RUN echo "ZSH_THEME=\"eastwood\"" >> $USER_HOME/.zshrc
 
 RUN echo "ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)" >> $USER_HOME/.zshrc
 
 RUN echo "plugins=( colored-man-pages colorize command-not-found cp copypath copyfile dirhistory extract globalias z zsh-autosuggestions zsh-interactive-cd zsh-navigation-tools zsh-syntax-highlighting )" >> $USER_HOME/.zshrc
+
+RUN echo "source ${USER_HOME}/.oh-my-zsh/oh-my-zsh.sh" >> $USER_HOME/.zshrc
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 
