@@ -6,7 +6,7 @@
 	"settings": {
 		"terminal.integrated.defaultProfile.linux": "zsh"
 	},
-	"postCreateCommand": "poetry install --no-ansi -n && jupyter notebook",
+	"postCreateCommand": "poetry install --no-ansi -n",
 	"extensions": [
 		"ms-python.python"
 	],
