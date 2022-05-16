@@ -6,9 +6,10 @@
 	"settings": {
 		"terminal.integrated.defaultProfile.linux": "zsh"
 	},
-	"postCreateCommand": "poetry install --no-ansi -n",
+	"postCreateCommand": "poetry install --no-ansi -n && jupyter notebook",
 	"extensions": [
 		"ms-python.python"
 	],
+	"appPort": 8888,
 	"remoteUser": "sebas"
 }

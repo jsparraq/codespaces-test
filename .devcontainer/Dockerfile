@@ -6,7 +6,7 @@ FROM python:3.10.4-slim-buster
 RUN apt update && apt upgrade
 
 RUN apt-get install --yes --no-install-recommends \ 
-    curl git zsh sudo wget build-essential manpages-dev \
+    curl git zsh sudo wget build-essential manpages-dev procps \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -87,6 +87,8 @@ RUN echo "ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)" >> $USER_HO
 RUN echo "plugins=( colored-man-pages colorize command-not-found cp copypath copyfile dirhistory extract globalias z zsh-autosuggestions zsh-interactive-cd zsh-navigation-tools zsh-syntax-highlighting )" >> $USER_HOME/.zshrc
 
 RUN echo "source ${USER_HOME}/.oh-my-zsh/oh-my-zsh.sh" >> $USER_HOME/.zshrc
+
+RUN echo "c.NotebookApp.allow_origin = '*'" >> $USER_HOME/.jupyter/jupyter_notebook_config.py
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 
